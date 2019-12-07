@@ -63,8 +63,6 @@
   <ItemGroup>
     <Compile Include="Assets\CoinScript.cs" />
     <Compile Include="Assets\DestroyTimer.cs" />
-    <Compile Include="Assets\DrawLine2D.cs" />
-    <Compile Include="Assets\DrawScript.cs" />
     <Compile Include="Assets\FlyingEnemy.cs" />
     <Compile Include="Assets\koshall.cs" />
     <Compile Include="Assets\move.cs" />

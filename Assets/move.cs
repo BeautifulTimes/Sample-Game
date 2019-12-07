@@ -50,10 +50,6 @@ public class move : MonoBehaviour {
             gameObject.GetComponent<Renderer>().enabled = false;
         }
     }
-    void OnCollisionExit2D(Collision2D theCollision)
-    {
-      
-    }
 
     void makeCoin(float col, float row)
     {

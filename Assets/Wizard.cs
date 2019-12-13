@@ -159,6 +159,23 @@ public class Wizard : MonoBehaviour {
             fireBullet(90, 5);
 
         }
+        if(num == 12)
+        {
+            attacks[19] = 100;
+            fireBullet(90, 0);
+            fireBullet(90, 1);
+            fireBullet(90, 2);
+            fireBullet(90, 6);
+            fireBullet(90, 7);
+            fireBullet(90, 8);
+            direction++;
+            fireBullet(90, 0);
+            fireBullet(90, 1);
+            fireBullet(90, 2);
+            fireBullet(90, 6);
+            fireBullet(90, 7);
+            fireBullet(90, 8);
+        }
     }
     void Start () {
         attacks = new int[20];
@@ -171,7 +188,6 @@ public class Wizard : MonoBehaviour {
             attacks[x] = -1;
 
         }
-        attack(11);
     }
 	void Update () {
         
@@ -229,7 +245,7 @@ public class Wizard : MonoBehaviour {
                 System.Random r = new System.Random();
                 int aa = 1;
                 int bb = 1;
-                bb = (int)r.Next(1, 12);
+                bb = (int)r.Next(1, 13);
                 aa = (int)r.Next(0, 2);
                 direction += aa;
                 Debug.Log(aa);

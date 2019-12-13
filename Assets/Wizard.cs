@@ -114,7 +114,7 @@ public class Wizard : MonoBehaviour {
         }
         if(num == 7)
         {
-            attacks[20] = 100;
+            attacks[19] = 100;
             attacks[11] = 500;
         }
         if(num == 8)
@@ -126,11 +126,38 @@ public class Wizard : MonoBehaviour {
         }
         if(num == 9)
         {
+            attacks[19] = 100;
             fireLaser(4);
             fireBullet(90, 0);
             fireBullet(90, 1);
             fireBullet(90, 7);
             fireBullet(90, 8);
+        }
+        if (num == 10)
+        {
+            attacks[19] = 100;
+
+            fireBullet(90, 1);
+            fireBullet(90, 2);
+            fireBullet(90, 3);
+            fireBullet(90, 5);
+            fireBullet(90, 6);
+            fireBullet(90, 7);
+
+
+        }
+        if(num == 11)
+        {
+            attacks[19] = 100;
+            fireBullet(90, 3);
+            fireBullet(90, 4);
+            fireBullet(90, 5);
+            direction++;
+
+            fireBullet(90, 3);
+            fireBullet(90, 4);
+            fireBullet(90, 5);
+
         }
     }
     void Start () {
@@ -144,8 +171,7 @@ public class Wizard : MonoBehaviour {
             attacks[x] = -1;
 
         }
-        direction++;
-        fireBullet(0, 0);
+        attack(11);
     }
 	void Update () {
         
@@ -203,7 +229,7 @@ public class Wizard : MonoBehaviour {
                 System.Random r = new System.Random();
                 int aa = 1;
                 int bb = 1;
-                bb = (int)r.Next(1, 9);
+                bb = (int)r.Next(1, 12);
                 aa = (int)r.Next(0, 2);
                 direction += aa;
                 Debug.Log(aa);

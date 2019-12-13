@@ -14,7 +14,6 @@ public class koshall : MonoBehaviour {
     {
 
         Destroy(gameObject);
-        
     }
     void Update () {
         timer--;

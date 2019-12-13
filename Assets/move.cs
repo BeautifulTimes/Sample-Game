@@ -4,31 +4,20 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 public class move : MonoBehaviour {
     public int direction = 0;
     public double xpos = 5;
     public double ypos = 5;
     public int coin = 0;
+    public int lastCoin = 0;
     public float distToGround;
     public Rigidbody2D rd;
-    int timer = 0;
     public Text textbox;
     public int time = 0;
     public GameObject coinobj;
     public Slider healthBar;
     public float gamespeed = 1;
-    void takeDamage()
-    {
-        GetComponent<SpriteRenderer>().color = Color.red;
-    }
-
-    void untakeDamage()
-    {
-        GetComponent<SpriteRenderer>().color = Color.white;
-
-    }
+    public Animator CoinAnimation;
     private void Start()    
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -36,13 +25,14 @@ public class move : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D theCollision)
     {
-        Debug.Log(theCollision.gameObject.tag);
         
         if (theCollision.gameObject.tag == "Coin")
         {
             coin++;
             System.Random r = new System.Random();
-            makeCoin((float)r.Next(10,90), (float)r.Next(10, 90));
+            makeCoin(5 + (float)r.Next(0,9)*10, 5 + (float)r.Next(0, 9) * 10);
+            CoinAnimation.SetBool("OnCoinTouch", true);
+            lastCoin = time;
         }
         else
         {
@@ -60,7 +50,6 @@ public class move : MonoBehaviour {
     void FixedUpdate() {
         textbox.text = "Coins: " + coin.ToString();
         gamespeed = (float)(Math.Pow((float)(1.01), (float)(coin)));
-
         if (Input.GetKey("a"))
         {
             direction = 0;
@@ -114,8 +103,8 @@ public class move : MonoBehaviour {
             }
             transform.position = new Vector2((float)(xpos * 1), (float)(ypos * 1));
             time++;
-            timer--;
-            Debug.Log(time);
+            if(time - lastCoin > 40)
+                CoinAnimation.SetBool("OnCoinTouch", false);
         }
 
     }

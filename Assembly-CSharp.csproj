@@ -61,13 +61,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraScript.cs" />
     <Compile Include="Assets\CoinScript.cs" />
+    <Compile Include="Assets\ColBorder.cs" />
     <Compile Include="Assets\DestroyTimer.cs" />
     <Compile Include="Assets\FlyingEnemy.cs" />
+    <Compile Include="Assets\gvars.cs" />
     <Compile Include="Assets\koshall.cs" />
     <Compile Include="Assets\move.cs" />
     <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\RougeScript.cs" />
+    <Compile Include="Assets\RowBorder.cs" />
     <Compile Include="Assets\Sideways.cs" />
     <Compile Include="Assets\Slime.cs" />
     <Compile Include="Assets\Swordscript.cs" />

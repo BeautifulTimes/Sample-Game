@@ -25,8 +25,6 @@ public class CoinScript : MonoBehaviour
     }
     void Update()
     {
-      //  if (Time.timeScale == 2)
-       //  Destroy(gameObject);    
 
     }
 }
